@@ -5,10 +5,10 @@ import { suits, faces } from '../services/CardValues.js';
 const images = {}
 suits.forEach(suit => {
   faces.forEach(face => {
-      images[`./${face}_${suit}.png`] = require(`../assets/png/1x/${face}_${suit}.png`);
+      images[`./${face}_${suit}.png`] = require(`../assets/png/1x/${face}_${suit}.png`).default;
   })
 });
-const cardBack = require(`../assets/png/1x/back-blue.png`);
+const cardBack = require(`../assets/png/1x/back-blue.png`).default;
 
 export default function CardView({ card: {suit, face, flip} }) {
   return (
